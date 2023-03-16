@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+        <body>
+            <?php
+                //nim 2110817310004
+                $celcius = 37.841;
+                $fahrenheit = (9/5) * $celcius + 32;
+                $reamur = (4/5) * $celcius;
+                $kelvin = $celcius +273.15;
+                
+                echo "Fahrenheit (F) = ".round($fahrenheit, 4);
+                echo "<br>Reamur (R) = ".round($reamur, 4);
+                echo "<br>kelvin (K) = ".round($kelvin, 4);
+            ?>
+        </body>
+</hmtl>
