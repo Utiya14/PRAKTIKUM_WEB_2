@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+        <body>
+            <?php
+                //nim 2110817310004
+                $r = 4.2;
+                $phi = 3.14;
+                $volume = (4/3)*$phi*$r*$r*$r;
+                echo round($volume, 3). " m3";
+            ?>
+        </body>
+</hmtl>
