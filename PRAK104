@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+        <body>
+            <?php
+                $smartphone = [
+                    "Daftar Smartphone Samsung",
+                    "Samsung Galaxy S22",
+                    "Samsung Galaxy S22+",
+                    "Samsung Galaxy A03",
+                    "Samsung Galaxy Xcover 5"
+                ];
+            
+            echo "<table border = '2'>";
+            echo "<tr><th>$smartphone[0]</th></tr>";
+            echo "<tr><td>$smartphone[1]</td></tr>";
+            echo "<tr><td>$smartphone[2]</td></tr>";
+            echo "<tr><td>$smartphone[3]</td></tr>";
+            echo "<tr><td>$smartphone[4]</td></tr>";
+            echo"</table>";
+            ?>
+        </body>
+</hmtl>
