@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        th{
+            background-color : red;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+    </style>
+    <head></head>
+        <body>
+            <?php
+                $smartphone = [
+                    "a" => "Daftar Smartphone Samsung",
+                    "b" => "Samsung Galaxy S22",
+                    "c" => "Samsung Galaxy S22+",
+                    "d" =>  "Samsung Galaxy A03",
+                    "e" =>   "Samsung Galaxy Xcover 5"
+                ];
+            
+            echo "<table border = '2'>";
+            echo "<tr><th>$smartphone[a]</th></tr>";
+            echo "<tr><td>$smartphone[b]</td></tr>";
+            echo "<tr><td>$smartphone[c]</td></tr>";
+            echo "<tr><td>$smartphone[d]</td></tr>";
+            echo "<tr><td>$smartphone[e]</td></tr>";
+            echo"</table>";
+            ?>
+        </body>
+</hmtl>
