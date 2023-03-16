@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+        <body>
+            <?php
+                echo "Hello World in PHP <br>";
+                echo "Nama Praktikum : Muhammad Utiya Raihan <br>";
+                echo "NIM : 2110817310004";
+            ?>
+        </body>
+</hmtl>
