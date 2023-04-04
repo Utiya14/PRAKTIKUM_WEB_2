@@ -1,0 +1,51 @@
+<html>
+    <style>
+        span{
+           color:red; 
+        }
+    </style>
+<head></head>
+<body>
+    <form action="" method="get">
+            <label for="nama">Nama: </label>
+            <input type="text" id="name" name="name">
+            <span class="text-danger">* <?php if (isset($_GET['sb2']) && $_GET['name'] == "") {
+                echo "nama tidak boleh kosong";}
+            ?></span>
+
+        <div> 
+            <label for="nim" class="form-label">NIM</label>
+            <input type="text" id="nim" name="nim">
+            <span class="text-danger">*<?php if (isset($_GET['sb2']) && $_GET['nim'] == ""){
+                echo "nama tidak boleh kosong";}
+            ?></span>
+        </div>
+
+        <div>
+            <p>Jenis Kelamin : <span class="text-danger">*<?php 
+                if (isset($_GET['sb2']) && !isset($_GET['jk'])) 
+                    echo "Jenis kelamin tidak boleh kosong";
+            ?></span></p>
+            <input type="radio" name="jk" id="jkp" value="Laki-Laki">
+            <label for="jkp">Laki-Laki</label>
+            <input type="radio" name="jk" id="jkw" value="Perempuan">
+            <label for="jkw">Perempuan</label>
+        </div>
+
+        <div> 
+            <button type="submit" name="sb2" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+
+    <?php   
+        if(isset($_GET['sb2']) && $_GET['name'] != "" && isset($_GET['jk']) && $_GET['nim'] != "" ){
+            $name = $_GET['name'];
+            $nim = $_GET['nim'];
+            $jk = $_GET['jk'];
+            echo "<h2>Hasil</h2>";
+            echo "Nama : $name <br>";
+            echo "NIM : $nim <br>";
+            echo "Jenis Kelamin : $jk <br>";
+        }
+    ?>
+</html>
