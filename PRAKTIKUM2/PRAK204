@@ -1,0 +1,34 @@
+<html>
+<head></head>
+<body>
+<form action="" method="get">
+        <label for="input1">Masukkan bilangan: </label>
+        <input type="text" name="nilai"/><br>
+        <button type = "submit">Konversi</button>
+    </form>
+
+    <?php 
+    if(isset($_GET['nilai'])){
+        // Membaca input bilangan
+        $input = ($_GET)['nilai'];
+        $bilangan = intval ($input);
+        // Menentukan satuan, puluhan, atau ratusan
+        if ($bilangan > 999) {
+            echo "Input anda melebihi batas";
+        }
+        if ( $bilangan < 0) {
+            echo "Input anda harus diatas 0";
+        }elseif ($bilangan > 0 && $bilangan <= 9) {
+            echo "Hasil: Satuan";
+        } elseif ($bilangan % 10 == 0 && $bilangan <100) {
+            echo "Hasil: puluhan";
+        }elseif ($bilangan >= 11 && $bilangan <= 19) {
+            echo "Hasil: Belasan";
+        }elseif ($bilangan >= 100 && $bilangan <= 999) {
+            echo "Hasil: Ratusan";
+        }elseif ($bilangan == 0) {
+            echo "Hasil: Nol";
+        }
+    }
+    ?>    
+</html>
