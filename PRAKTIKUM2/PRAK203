@@ -1,0 +1,89 @@
+<html>
+    <style>
+    </style>
+<head></head>
+<body>
+<form action="" method="get">
+        <div class="mb-3">
+            <label for="suhu" class="form-label">Nilai</label>
+            <input type="text" id="suhu" name="suhuinput">
+            <p>Dari : </p>
+            <input type="radio" name="suhuAsal" id="suhuAsalc" value="c">
+            <label for="suhuAsalc">Celcius</label>
+            <br>
+            <input type="radio" name="suhuAsal" id="suhuAsalf" value="f">
+            <label for="suhuAsalf">Fahrenheit</label>
+            <br>
+            <input type="radio" name="suhuAsal" id="suhuAsalr" value="r">
+            <label for="suhuAsalr">Reamur</label>
+            <br>
+            <input type="radio" name="suhuAsal" id="suhuAsalk" value="k">
+            <label for="suhuAsalk">Kelvin</label>
+            <br>
+            <p>Ke :</p>
+            <input type="radio" name="suhuTujuan" id="suhuTujuanc" value="c">
+            <label for="suhuTujuanc">Celcius</label>
+            <br>
+            <input type="radio" name="suhuTujuan" id="suhuTujuanf" value="f">
+            <label for="suhuTujuanf">Fahrenheit</label>
+            <br>
+            <input type="radio" name="suhuTujuan" id="suhuTujuanr" value="r">
+            <label for="suhuTujuanr">Reamur</label>
+            <br>
+            <input type="radio" name="suhuTujuan" id="suhuTujuank" value="k">
+            <label for="suhuTujuank">Kelvin</label>
+        </div>
+
+        <div class="mb-3"> 
+            <button type="submit" name="sb3" class="btn btn-primary">Submit</button>
+        </div>
+
+    </form>
+    <?php 
+        if(isset($_GET['sb3']) && isset($_GET['suhuinput']) && isset($_GET['suhuAsal']) && isset($_GET['suhuTujuan'])){
+            $suhu = $_GET['suhuinput'];
+            $suhuAsal = $_GET['suhuAsal'];
+            $suhuTujuan = $_GET['suhuTujuan'];
+            $satuan = strval($suhuTujuan);
+            if($suhuAsal == "c" && $suhuTujuan == "f"){
+                $hasil = $suhu * (9/5) + 32;
+                echo "Hasil : $hasil";
+            }else if($suhuAsal == "c" && $suhuTujuan == "r"){
+                $hasil = $suhu * (4/5);
+                echo "Hasil : $hasil";
+            }else if($suhuAsal == "c" && $suhuTujuan == "k"){
+                $hasil = $suhu + 273;
+                echo "Hasil : $hasil";
+            }else if($suhuAsal == "f" && $suhuTujuan == "c"){
+                $hasil = $suhu * (5/9) - 32;
+                echo "Hasil : $hasil";
+            }else if($suhuAsal == "f" && $suhuTujuan == "r"){
+                $hasil = $suhu * (4/9) - 32;
+                echo "Hasil : $hasil";
+            }else if($suhuAsal == "f" && $suhuTujuan == "k"){
+                $hasil = ($suhu - 32) * (5/9) + 273;
+                echo "Hasil : $hasil";
+            }else if($suhuAsal == "r" && $suhuTujuan == "c"){
+                $hasil = $suhu * (5/4);
+                echo "Hasil : $hasil";
+            }else if($suhuAsal == "r" && $suhuTujuan == "f"){
+                $hasil = $suhu * (9/4) + 32;
+                echo "Hasil : $hasil";
+            }else if($suhuAsal == "r" && $suhuTujuan == "k"){
+                $hasil = $suhu * (5/4) + 273;
+                echo "Hasil : $hasil";
+            }else if($suhuAsal == "k" && $suhuTujuan == "c"){
+                $hasil = $suhu - 273;
+                echo "Hasil : $hasil";
+            }else if($suhuAsal == "k" && $suhuTujuan == "f"){
+                $hasil = ($suhu - 273) * (9/5) + 32;
+                echo "Hasil : $hasil";
+            }else if($suhuAsal == "k" && $suhuTujuan == "r"){
+                $hasil = $suhu * (4/5) - 273;
+                echo "Hasil : $hasil";
+            }else{
+                echo "Hasil : $suhu ". $satuan;
+            }
+        }
+    ?>
+</html>
