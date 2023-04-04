@@ -47,43 +47,32 @@
             $satuan = strval($suhuTujuan);
             if($suhuAsal == "c" && $suhuTujuan == "f"){
                 $hasil = $suhu * (9/5) + 32;
-                echo "Hasil : $hasil";
             }else if($suhuAsal == "c" && $suhuTujuan == "r"){
                 $hasil = $suhu * (4/5);
-                echo "Hasil : $hasil";
             }else if($suhuAsal == "c" && $suhuTujuan == "k"){
                 $hasil = $suhu + 273;
-                echo "Hasil : $hasil";
             }else if($suhuAsal == "f" && $suhuTujuan == "c"){
                 $hasil = $suhu * (5/9) - 32;
-                echo "Hasil : $hasil";
             }else if($suhuAsal == "f" && $suhuTujuan == "r"){
                 $hasil = $suhu * (4/9) - 32;
-                echo "Hasil : $hasil";
             }else if($suhuAsal == "f" && $suhuTujuan == "k"){
                 $hasil = ($suhu - 32) * (5/9) + 273;
-                echo "Hasil : $hasil";
             }else if($suhuAsal == "r" && $suhuTujuan == "c"){
                 $hasil = $suhu * (5/4);
-                echo "Hasil : $hasil";
             }else if($suhuAsal == "r" && $suhuTujuan == "f"){
                 $hasil = $suhu * (9/4) + 32;
-                echo "Hasil : $hasil";
             }else if($suhuAsal == "r" && $suhuTujuan == "k"){
                 $hasil = $suhu * (5/4) + 273;
-                echo "Hasil : $hasil";
             }else if($suhuAsal == "k" && $suhuTujuan == "c"){
                 $hasil = $suhu - 273;
-                echo "Hasil : $hasil";
             }else if($suhuAsal == "k" && $suhuTujuan == "f"){
                 $hasil = ($suhu - 273) * (9/5) + 32;
-                echo "Hasil : $hasil";
             }else if($suhuAsal == "k" && $suhuTujuan == "r"){
                 $hasil = $suhu * (4/5) - 273;
-                echo "Hasil : $hasil";
             }else{
-                echo "Hasil : $suhu ". $satuan;
+                $hasil = $suhu;
             }
+            echo "Hasil : $hasil &deg;".strtoupper($suhuTujuan);
         }
     ?>
 </html>
