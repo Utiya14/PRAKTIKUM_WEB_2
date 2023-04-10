@@ -1,0 +1,34 @@
+<html>
+<head>
+    <style>
+        h2.genap{
+            color : green;
+        }
+        h2.ganjil{
+            color : red;
+        }
+    </style>
+</head>
+<body>
+<form action="" method="get">
+        <label for="input">Jumlah Peserta : </label>
+        <input type="text" name="peserta"/><br>
+        <button type = "submit">Cetak</button>
+    </form>
+    <?php 
+    if(isset($_GET['peserta'])){
+        // Membaca input bilangan
+        $input = ($_GET)['peserta'];
+        $i=1;
+        while ($i <= $input) {
+            if ($i%2 == 0) {
+                echo "<h2 class='genap'>Peserta ke-$i</h2>";
+            }
+            else {
+                echo "<h2 class='ganjil'>Peserta ke-$i</h2>";
+            }
+        $i++;
+        }
+    }
+    ?>    
+</html>
