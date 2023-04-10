@@ -1,0 +1,38 @@
+<html>
+<head>
+    <style>
+        img{
+            width : 50px;
+            height : 50px;
+        }
+    </style>
+</head>
+<body>
+<form action="" method="get">
+        <label for="input">Tinggi : </label>
+        <input type="text" name="tinggi"/><br>
+        <label for="input">Alamat Gambar : </label>
+        <input type="text" name="gambar"/><br>
+        <button type = "submit">Cetak</button>
+    </form>
+
+    <?php 
+    if(isset($_GET['tinggi']) && (isset($_GET['gambar']))) {
+        // Membaca input bilangan
+        $tinggi = ($_GET)['tinggi'];
+        $gambar = ($_GET)['gambar'];
+        echo '<p style="float: left; text-align: right;">';
+        $i=0;
+        while ($i < $tinggi) {
+            $j=$i;
+            while ($j < $tinggi) {
+                echo "<img src='$gambar' alt=''>";
+            $j++;
+            }
+            $i++;
+            echo "<br>";
+        }
+        echo '</p>';
+    }
+    ?>    
+</html>
