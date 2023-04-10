@@ -1,0 +1,37 @@
+<html>
+<head>
+    <style>
+        img{
+            width : 15px;
+            height : 15px;
+        }
+    </style>
+</head>
+<body>
+<form action="" method="get">
+        <label for="input">Batas Bawah : </label>
+        <input type="text" name="bawah"/><br>
+        <label for="input">Batas Atas : </label>
+        <input type="text" name="atas"/><br>
+        <button type = "submit">Cetak</button>
+    </form>
+
+    <?php 
+    if(isset($_GET['bawah']) && (isset($_GET['atas']))) {
+        // Membaca input bilangan
+        $bawah = ($_GET)['bawah'];
+        $atas = ($_GET)['atas'];
+        $bil = intval ($bawah);
+        //membuat perulangan bilangan deret
+        do {
+        //pengkondisian jika (bilangan + 7)%5 == 0
+            if (($bil + 7) %5 == 0) {
+                echo "<img src='star.png' alt=''> ";
+            }else{
+                echo "$bil ";
+            }
+            $bil++;
+        } while ($bil <= $atas); 
+    }
+    ?>    
+</html>
