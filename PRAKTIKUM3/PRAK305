@@ -1,0 +1,29 @@
+<html>
+<head>
+    <style>
+    </style>
+</head>
+<body>
+ 
+    <form action="" method="get">
+        <input type="text" name="input" value="">
+        <button type="submit">Submit</button>
+    </form>
+    <?php  
+        if(isset($_GET['input'])){
+            // Membaca input bilangan
+            $input = $_GET['input'];
+            $array = str_split($input);
+            for ($i=1; $i <= count($array); $i++) { 
+                for ($j=1; $j <= count($array); $j++) { 
+                    if ($j == 1) {
+                        echo strtoupper($array[$i-1]);
+                    }else {
+                        echo strtolower($array[$i-1]);
+                    }
+                }
+            }
+        }
+    ?>
+</body>
+</html>
