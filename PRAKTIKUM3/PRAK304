@@ -1,0 +1,41 @@
+<html>
+<head>
+    <style>
+        img{
+            width : 50px;
+            height : 50px;
+        }
+    </style>
+</head>
+<body>
+    <?php   
+        $bil = isset($_POST['bintang']) ? $_POST['bintang'] : 0;
+
+        if(isset($_POST['input'])) {
+            $input = $_POST['input'];
+            if($input=="Tambah"){
+                $bil++;
+            }else{
+                $bil--;
+            }
+        }
+    ?>
+    <form action="" method="post">
+        <label for="input">Jumlah Bintang : </label>
+        <input type="text" name="bintang" value="<?php echo $bil?>"><br>
+        <button type="submit">Submit</button>
+    <?php 
+        if(!empty($bil)) {
+            echo "<br>";
+            echo "Jumlah Bintang $bil";
+            echo "<br>";
+            for ($i=0; $i < $bil; $i++){ 
+                echo "<img src='star.png' alt=''/>";
+            }?>
+            <input type="hidden" name="bintang" value="<?= $bil ?>"><br><br>
+            <input type="submit" name="input" value="Tambah"/>
+            <input type="submit" name="input" value="Kurang"/><br>
+    </form>
+    <?php } ?>
+</body>
+</html>
