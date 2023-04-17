@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAKTIKUM 4</title>
+</head>
+<body>
+    <form action="" method="post">
+        <label for="angka1">Panjang</label>
+        <input type="number" name="angka1">
+        <br>
+        <label for="angka2">lebar</label>
+        <input type="number" name="angka2">
+        <br>
+        <label for="data">Nilai</label>
+        <input type="text" name="data">
+        <button type="submit">submit</button>
+    </form>
+    <?php 
+        if (isset($_POST['data']) && $_POST['angka1'] && $_POST['angka2']) {
+            $data = $_POST['data'];
+            $angka1 = $_POST['angka1'];
+            $angka2 = $_POST['angka2'];
+            $dataBaru = explode(" ", $data); // mecahin array
+            if ($angka1 != $angka2) {
+                echo "Panjang nilai tidak sesuai dengan ukuran matriks";
+                exit;
+            }
+            echo "<br>";
+            echo "array hasil explode";
+            echo "<br>";
+            echo "<table border = '2'>";
+            $batas = 0;
+            for ($i = 0; $i < $angka1; $i++) {
+                echo "<tr>";
+                for ($j = 0; $j < $angka2; $j++) {
+                    echo "<td>".$dataBaru[$batas]."</td>";
+                    $batas++;
+                }
+                echo "</tr>";
+            }   
+            echo "</table>";
+        }
+    ?>
+</body>
+</html>
