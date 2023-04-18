@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+        <title>PRAKTIKUM 4</title>
+    </head>
+    <body>
+
+    <table border ='1'>
+    <thead>
+        <tr>
+            <th>Nama</th>
+            <th>NIM</th>
+            <th>Nilai UTS</th>
+            <th>Nilai UAS</th>
+            <th>Nilai AKhir</th>
+            <th>Huruf</th>
+        </tr>
+    </thead>
+
+    <?php 
+        $data =
+        [
+            [
+            "nama" => "Andi",
+            "nim" => "2101001 ",
+            "uts" => 87,
+            "uas" => 65
+            ],
+            [
+                "nama" => "Budi",
+                "nim" => "2101002 ",
+                "uts" => 76,
+                "uas" => 79
+                ],
+            [
+                "nama" => "Tono",
+                "nim" => "2101003  ",
+                "uts" => 50,
+                "uas" => 41
+                ],
+            [
+                "nama" => "Jessica",
+                "nim" => "2101004  ",
+                "uts" => 60,
+                "uas" => 75
+                ],
+            ];
+            for ($i=0; $i < count($data); $i++) {
+                echo "<tr>";
+                echo "<td>".$data[$i]["nama"]."</td>";
+                echo "<td>".$data[$i]["nim"]."</td>";
+                echo "<td>".$data[$i]["uts"]."</td>";
+                echo "<td>".$data[$i]["uas"]."</td>";
+                echo "<td>".$data[$i]["nilai_akhir"] = $data[$i]["uts"] * (40/100) + (60/100) * $data[$i]["uas"]."</td>";
+                    switch (true) {
+                        case ($data[$i]["nilai_akhir"] >= 80):
+                            echo "<td>A</td>";
+                            break;
+                        case ($data[$i]["nilai_akhir"] >= 70 && $data[$i]["nilai_akhir"] <= 79):
+                            echo "<td>B</td>";
+                            break;
+                        case ($data[$i]["nilai_akhir"] >= 60 && $data[$i]["nilai_akhir"] <70):
+                            echo "<td>C</td>";
+                            break;
+                        case ($data[$i]["nilai_akhir"] >= 50 && $data[$i]["nilai_akhir"] <= 59):
+                            echo "<td>D</td>";
+                            break;
+                        case ($data[$i]["nilai_akhir"] < 50):
+                            echo "<td>E</td>";
+                            break;
+                    }
+                }
+    ?>
+    </body>
+</html>
